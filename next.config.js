@@ -4,7 +4,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   images: {
-    deviceSizes:,
+    deviceSizes: [428, 540, 640, 768, 1024, 1120],
   },
   eslint: {
     dirs: ['pages', 'components', 'lib', 'layouts', 'utils'],
@@ -15,19 +15,5 @@ module.exports = withBundleAnalyzer({
       use: ['@svgr/webpack'],
     })
     return config
-  },
-  // TAMBAHKAN BLOK HEADERS DI BAWAH INI UNTUK MEMAKSA AUTO-DOWNLOAD VIA SERVER
-  async headers() {
-    return [
-      {
-        source: '/cv-msoleh.pdf',
-        headers: [
-          {
-            key: 'Content-Disposition',
-            value: 'attachment; filename="CV_Muhamad_Soleh.pdf"',
-          },
-        ],
-      },
-    ]
   },
 })
