@@ -127,7 +127,7 @@ const Contact01 = ({ main = {} }) => {
                     className="w-full sm:w-1/3"
                     disabled={isSubmitting}
                   >
-                    Submit
+                    Kirim
                   </Button>
                 </div>
               </div>
