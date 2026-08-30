@@ -21,7 +21,7 @@ Gunakan formulir di halaman ini atau hubungi saya langsung lewat kontak berikut.
 <Sep size="12" />
 
 <small>
-  <Icon src="/icons/call.svg" className="inline mr-2 align-middle fill-current text-omega-500" /> Telepon: +62 896 9080 1524
+  <Icon src="/icons/call.svg" className="inline mr-2 align-middle fill-current text-omega-500" /> Telepon: +62 8874 3313 0861
 
   <Icon src="/icons/mail.svg" className="mr-2 inline align-middle fill-current text-omega-500" /> Email: solehudinz3692@gmail.com
 
