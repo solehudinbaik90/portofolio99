@@ -51,7 +51,7 @@ list:
   - name: MTs Raudlatul Ilmiyah
     icon:
       src: /icons/logo-2.svg
-  - name: Sekolah Alam Semesta
+  - name: Sekolah Pinggir Jurang
     icon:
       src: /icons/logo-3.svg
   - name: Bimbel Zenius
