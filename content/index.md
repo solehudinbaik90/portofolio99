@@ -36,9 +36,9 @@ Seorang pendidik yang meski usianya sudah tak muda lagi, tetap berjuang mencerda
 
 ---cta
 ---
-<Button href="/cv-msoleh.pdf" size="lg">
+<a href="/cv-msoleh.pdf" download="CV_Muhamad_Soleh.pdf" class="btn btn-lg">
   Unduh CV
-</Button>
+</a>
 
 
 
