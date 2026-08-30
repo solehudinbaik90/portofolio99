@@ -12,6 +12,6 @@ seo:
 
 Halaman yang Anda cari sepertinya tidak ada.
 
-<Button href="/contact" size="sm">Kembali ke Beranda</Button>
+<Button href="/" size="sm">Kembali ke Beranda</Button>
 
 atau kunjungi [blog saya](/blog)
