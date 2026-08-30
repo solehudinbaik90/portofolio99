@@ -36,8 +36,8 @@ Seorang pendidik yang meski usianya sudah tak muda lagi, tetap berjuang mencerda
 
 ---cta
 ---
-<Button href="/cv-msoleh.pdf" size="lg">
-  Unduh CV
+<Button href="/contact" size="lg">
+  Hubungi Saya
 </Button>
 
 
