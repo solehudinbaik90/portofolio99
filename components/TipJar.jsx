@@ -10,33 +10,6 @@ const { tipUrl } = config.convertKit || {}
 const TipJar = (props) => {
   const { className, ...rest } = props
 
-  React.useEffect(() => {
-    if (!tipUrl) return
-
-    const scriptSrc = 'https://productive-blogging.ck.page/commerce.js'
-    const scriptSelector = `script[src^="${scriptSrc}"`
-    const iframeSelector = `iframe[src^="${tipUrl}"`
-
-    const loadScript = () => {
-      window.removeEventListener('scroll', loadScript)
-      const script = document.createElement('script')
-      script.src = scriptSrc
-      script.defer = true
-      script.onload = (e) => {
-        document.querySelector(iframeSelector)?.classList.add('bg-omega-800/90')
-      }
-      document.body.appendChild(script)
-    }
-
-    window.addEventListener('scroll', loadScript)
-
-    return () => {
-      window.removeEventListener('scroll', loadScript)
-      document.querySelector(scriptSelector)?.remove()
-      document.querySelector(iframeSelector)?.remove()
-    }
-  }, [])
-
   return (
     <div
       className={classNames(
@@ -47,18 +20,22 @@ const TipJar = (props) => {
       {...rest}
     >
       <Head>
-        <link rel="preconnect" href="https://convertkit.com" />
-        <link rel="dns-prefetch" href="https://convertkit.com" />
         <link rel="preconnect" href="https://stripe.com" />
         <link rel="dns-prefetch" href="https://stripe.com" />
       </Head>
       <p className="my-2 text-black md:m-0">
-        Hi there! <strong className="text-black">Want to support my work?</strong>
+        Hai, yang di sana! <strong className="text-black">Ingin mendukung karya saya?</strong>
       </p>
       <BiCoffee className="mx-4 ml-auto inline hidden text-5xl text-omega-800 md:block" />
       <div>
-        <Button size="xs" className="font-bold" data-commerce href={tipUrl}>
-          Buy me a coffee
+        <Button 
+          size="xs" 
+          className="font-bold" 
+          href={tipUrl || '#'} 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          Traktir Saya kopi
         </Button>
       </div>
     </div>
