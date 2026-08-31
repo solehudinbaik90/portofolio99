@@ -54,12 +54,6 @@ export async function getStaticProps({ params }) {
   }
 }
 
-  // Generate RSS feed for collections
-  await generateCollectionRss(slug)
-
-  return { props }
-}
-
 
 export async function getStaticPaths() {
   const pages = await getPaths()
