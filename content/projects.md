@@ -1,13 +1,13 @@
 ---
 layout: Projects
 seo:
-  title: Web Development Projects
-  description: Custom description for this page goes here
+  title: Proyek Pengembangan Website
+  description: Selalu belajar dari developer hebat kita kagumi
 ---
 
 ---github
 repositories:
-  - solehudinbaik90/portofolio2
+  - solehudinbaik90/portofolio
   - solehudinbaik90/portofolio3
   - solehudinbaik90/portofolio4
 ---
