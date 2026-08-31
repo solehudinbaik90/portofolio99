@@ -6,7 +6,6 @@ import layouts from '@/layouts/index'
 import { getPaths, getPageBySlug, generateCollectionRss } from '@/lib/mdx'
 import { siteMetaData } from '../theme.config'
 
-// Fetch data at build time
 export async function getStaticProps({ params }) {
   let slug = params.slug || []
   let currentPage = 1
@@ -26,7 +25,6 @@ export async function getStaticProps({ params }) {
 
   const props = { page }
 
-  // Add pagination props for collection pages
   if (page.meta && page.meta.collection) {
     const {
       meta: {
@@ -48,14 +46,21 @@ export async function getStaticProps({ params }) {
     }
   }
 
+  await generateCollectionRss(slug)
+
+  return {
+    props,
+    revalidate: 43200,
+  }
+}
+
   // Generate RSS feed for collections
   await generateCollectionRss(slug)
 
   return { props }
 }
 
-// Specify dynamic routes to pre-render pages based on data.
-// The HTML is generated at build time and will be reused on each request.
+
 export async function getStaticPaths() {
   const pages = await getPaths()
 
