@@ -1,19 +1,18 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import FormInput from '@/components/FormInput'
-import Icon from '@/components/Icon'
 import Button from '@/components/Button'
 import { IoClose } from 'react-icons/io5'
+import { HiOutlineShieldCheck } from 'react-icons/hi'
 
 const IntroMessage = () => (
   <div className="prose dark:prose-invert">
     <h3>
-      <em>Stay Tuned</em>
+      <em>Pantau terus</em>
     </h3>
-    <h6>Want to become a Next.js pro?</h6>
+    <h6>Ingin menjadi ahli Next.js?</h6>
     <small>
-      The best articles, links and news related to web development delivered once a week to your
-      inbox.
+      Artikel, tautan, dan berita terbaik seputar pengembangan web yang dikirimkan seminggu sekali ke kotak masuk Anda.
     </small>
   </div>
 )
@@ -25,27 +24,18 @@ const ErrorMessage = ({ errors, name }) =>
 
 const SuccessMessage = ({ handleReset }) => (
   <div className="my-6 mx-auto flex max-w-md justify-between bg-omega-800 p-3">
-    <span className="text-alpha">Please check your inbox and confirm your email.</span>
+    <span className="text-alpha">Terima kasih telah berlangganan! Silakan periksa kotak masuk Anda.</span>
     <button onClick={() => handleReset()} className="h-5 w-5 hover:bg-omega-900">
       <IoClose className="mx-auto h-4 w-4 text-omega-500" />
     </button>
   </div>
 )
 
-const Badge = () => (
-  <div>
-    <a
-      className="group h-6 text-omega-400 no-underline"
-      target="_blank"
-      rel="noreferrer"
-      href="https://convertkit.com?lmref=CeGsMw"
-    >
-      <span className="text-xs">BUILT WITH</span>
-      <Icon
-        src="/icons/convertkit.svg"
-        className="ml-2 mb-1 inline h-6 w-24 align-middle group-hover:text-[#FB6970]"
-      />
-    </a>
+
+const PrivacyBadge = () => (
+  <div className="flex items-center space-x-1.5 text-omega-400">
+    <HiOutlineShieldCheck className="h-4 w-4 text-emerald-500" />
+    <span className="text-xs">Tidak ada spam. Berhenti berlangganan kapan saja.</span>
   </div>
 )
 
@@ -69,9 +59,11 @@ const Newsletter = ({ className }) => {
           credentials: 'same-origin',
         }),
       })
+
       if (res.status === 201) {
         return true
       }
+      
       const json = await res.json()
       if (json.error) {
         throw json.error
@@ -102,7 +94,7 @@ const Newsletter = ({ className }) => {
               disabled={isSubmitting}
               type="text"
               name="email"
-              placeholder="Johndoe@example.com"
+              placeholder="Email@contoh.com"
               aria-label="email address"
               hasError={errors.email || errors.service}
               {...register('email', {
@@ -122,11 +114,11 @@ const Newsletter = ({ className }) => {
             </div>
           </div>
           <Button as="button" type="submit" size="xs" disabled={isSubmitting}>
-            Subscribe
+            {isSubmitting ? 'Submitting...' : 'Subscribe'}
           </Button>
         </form>
       )}
-      <Badge />
+      <PrivacyBadge />
     </div>
   )
 }
