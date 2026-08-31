@@ -15,19 +15,29 @@ const subscribe = async (req, res) => {
   }
 
   try {
-    const FORM_ID = process.env.CONVERTKIT_FORM_ID
-    const API_KEY = process.env.CONVERTKIT_API_KEY
-    const API_URL = process.env.CONVERTKIT_API_URL
 
-    const data = { email, api_key: API_KEY }
+    const API_KEY = process.env.BREVO_API_KEY
 
-    const response = await fetch(`${API_URL}forms/${FORM_ID}/subscribe`, {
-      body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' },
+    if (!API_KEY) {
+      return res.status(500).json({ error: 'Brevo API Key is missing in environment variables.' })
+    }
+
+    const response = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'api-key': API_KEY,
+      },
+      body: JSON.stringify({
+        email: email,
+        updateEnabled: true,
+      }),
     })
 
     if (response.status >= 400) {
+      const errorData = await response.json()
+      console.error('Brevo API Error Details:', errorData)
       return res.status(400).json({ error: 'There was an error subscribing to the list.' })
     }
 
