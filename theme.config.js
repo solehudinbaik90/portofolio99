@@ -76,19 +76,19 @@ export const social = [
 export const config = {
   dateLocale: 'en-US',
   dateOptions: {
-    // dateOptions is passed to JavaScript's toLocaleDateString()
     year: 'numeric',
     month: 'long',
     day: 'numeric',
     timeZone: 'UTC',
   },
+
   convertKit: {
-    tipUrl: 'https://fantastic-mover-3439.ck.page/products/blog',
+    tipUrl: 'https://saweria.co', 
   },
   contactForm: {
     inputs: require('./content/contact-form.json'),
-    recipient: 'RECIPIENT@EXAMPLE.com',
-    sender: 'SENDER@EXAMPLE.com',
+    recipient: 'solehudinz3692@gmail.com',
+    sender: 'onboarding@resend.dev',
     subject: 'EMAIL NOTIFICATION SUBJECT',
   },
 }
