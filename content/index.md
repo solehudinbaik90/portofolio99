@@ -13,7 +13,7 @@ images:
     alt: Foto Muhamad Soleh
 ---
 
-# <Typewriter>Muhamad Soleh</Typewriter>
+# <Typewriter interval={4000}>Muhamad Soleh</Typewriter>
 
 # *Guru Fisika* <span>&</span> *Desainer Web*
 
