@@ -3,12 +3,17 @@
  * will be treated as an API endpoint instead of a page.        *
  ****************************************************************/
 
-import sendgrid from '@sendgrid/mail'
+import { Resend } from 'resend'
 import { config } from '../../theme.config'
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 const contact = async (req, res) => {
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', ['POST'])
+    return res.status(405).json({ error: 'Request method is not allowed.' })
+  }
+
   const { email } = req.body
   const { recipient, sender, subject } = config.contactForm || {}
 
@@ -26,10 +31,6 @@ const contact = async (req, res) => {
     return res
       .status(400)
       .json({ error: 'Missing email address. Please provide a correct email address.' })
-  }
-
-  if (req.method !== 'POST') {
-    return res.status(405).send({ error: 'Request method is not allowed.' })
   }
 
   const getHtmlBody = (body) => {
@@ -53,18 +54,32 @@ const contact = async (req, res) => {
   }
 
   try {
-    await sendgrid.send({
-      to: recipient, // Your email where you'll receive emails
-      from: recipient, // your website email address here
+
+    const response = await resend.emails.send({
+      to: recipient,
+      from: sender,
       replyTo: email,
       subject: req.body.subject || subject || 'Contact form entry',
-      html,
+      html: `
+        <div style="font-family: sans-serif; padding: 20px; color: #333; line-height: 1.6;">
+          <h2 style="color: #111;">Pesan Baru Diterima</h2>
+          <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 20px;" />
+          <div>${html}</div>
+          <hr style="border: 0; border-top: 1px solid #eee; margin-top: 20px;" />
+          <p style="font-size: 11px; color: #999;">Dikirim secara otomatis via Resend dari Website Portofolio Anda.</p>
+        </div>
+      `,
     })
-  } catch (error) {
-    return res.status(error.statusCode || 500).json({ error: error.message })
-  }
 
-  return res.status(200).json({ error: '' })
+    if (response.error) {
+      throw new Error(response.error.message)
+    }
+
+    return res.status(200).json({ error: '' })
+  } catch (error) {
+    console.error('Resend Error:', error)
+    return res.status(error.statusCode || 500).json({ error: error.message || 'Gagal mengirim email.' })
+  }
 }
 
 export default contact
