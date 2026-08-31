@@ -41,7 +41,7 @@ export const menu = [
     Icon: SlTrophy,
   },
   {
-    name: 'Contact',
+    name: 'Kontak',
     slug: '/contact',
     Icon: SlEnvolope,
   },
@@ -83,7 +83,7 @@ export const config = {
   },
 
   convertKit: {
-    tipUrl: 'https://saweria.co', 
+    tipUrl: 'https://saweria.co/msoleh90', 
   },
   contactForm: {
     inputs: require('./content/contact-form.json'),
