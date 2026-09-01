@@ -88,7 +88,7 @@ Rumus fisika juga bisa ditampilkan di dalam komponen `<Wide />`.
 
 ### Kotak Donasi
 
-Untuk menerima donasi (kontribusi) dari pembaca, kami telah mengembangkan komponen React `<TipJar />` yang berfungsi penuh dan terintegrasi dengan [ConvertKit](https://convertkit.com?lmref=CeGsMw&utm_campaign=documentation), yang bisa Anda gunakan di mana saja dalam artikel atau halaman blog Anda.
+Untuk menerima donasi (kontribusi) dari pembaca, kami telah mengembangkan komponen React `<TipJar />` yang berfungsi penuh dan terintegrasi dengan [Saweria](https://saweria.co/msoleh90), yang bisa Anda gunakan di mana saja dalam artikel atau halaman blog Anda.
 
 ```md
 <TipJar />
@@ -101,7 +101,7 @@ Ini akan menampilkan komponen TipJar:
 
 ### Newsletter
 
-Tema ini terintegrasi dengan [ConvertKit](https://convertkit.com?lmref=CeGsMw&utm_campaign=documentation) untuk membesarkan daftar email pelanggan Anda. Dengan membuat daftar email, Anda bisa memberi tahu pelanggan saat menerbitkan artikel baru, misalnya seri pembahasan fisika berikutnya tentang teori relativitas atau tekanan.
+Tema ini terintegrasi dengan [Brevo](https://www.brevo.com/features/email-templates/) untuk membesarkan daftar email pelanggan Anda. Dengan membuat daftar email, Anda bisa memberi tahu pelanggan saat menerbitkan artikel baru, misalnya seri pembahasan fisika berikutnya tentang teori relativitas atau tekanan.
 
 ```md
 <Newsletter className="bg-omega-800 p-10" />
