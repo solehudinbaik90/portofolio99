@@ -17,11 +17,11 @@ Muhamad Soleh adalah seorang guru fisika yang meski usianya tak lagi muda, tetap
 
 ##### <span>02.</span> Minat dan Hobi
 
-Di waktu luang, Soleh gemar mengamati fenomena langit lewat astronomi, membaca riset pendidikan fisika terbaru, bermain catur untuk melatih logika berpikir, serta mencoba eksperimen sains sederhana untuk dibawa ke ruang kelas.
+Di waktu luang, Saya gemar mengamati fenomena langit lewat astronomi, membaca riset pendidikan fisika terbaru, bermain catur untuk melatih logika berpikir, serta mencoba eksperimen sains sederhana untuk dibawa ke ruang kelas.
 
 ##### <span>03.</span> Keahlian Teknologi
 
-Selain mengajar, Soleh menguasai WordPress, PHP/MySQL, dan Angular/JavaScript untuk membangun serta mengelola website sekolah sebagai media informasi dan komunikasi dengan orang tua murid.
+Selain mengajar, Saya menguasai WordPress, PHP/MySQL, dan Angular/JavaScript untuk membangun serta mengelola website sekolah sebagai media informasi dan komunikasi dengan orang tua murid.
 
 
 
@@ -40,9 +40,9 @@ Mari tingkatkan kualitas pendidikan dan digitalisasi sekolah bersama!
 ---skills_header
 title: Keahlian Saya
 list:
-  - Pendidikan & Pengajaran
-  - Bahasa
-  - Pengembangan Web
+  - Mengajar Fisika
+  - Desain grafis
+  - Desain Website
 ---
 
 
