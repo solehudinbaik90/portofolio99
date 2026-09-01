@@ -32,6 +32,7 @@ const subscribe = async (req, res) => {
       body: JSON.stringify({
         email: email,
         updateEnabled: true,
+        listIds: [Number(process.env.BREVOLISTID)],
       }),
     })
 
