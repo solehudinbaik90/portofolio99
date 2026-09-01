@@ -73,7 +73,7 @@ const Menu = () => {
         className={classNames(
           'bg-gradient-omega-900 shrink-0 flex-col items-center justify-between md:flex',
           'fixed left-0 top-full z-40 w-full md:w-16',
-          'md:sticky md:top-20 md:h-[calc(100vh-theme(space.40))]',
+          'md:top-20 md:h-[calc(100vh-theme(space.40))]',
           'transition-transform md:translate-y-0',
           isOpen ? '-translate-y-full' : '-translate-y-16'
         )}
