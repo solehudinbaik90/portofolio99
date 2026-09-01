@@ -101,7 +101,7 @@ Rumus fisika juga bisa ditampilkan di dalam komponen `<Wide />`.
 
 ### Kotak Donasi
 
-Untuk menerima donasi (kontribusi) dari pembaca, kami telah mengembangkan komponen React `<TipJar />` yang berfungsi penuh dan terintegrasi dengan [ConvertKit](https://convertkit.com?lmref=CeGsMw&utm_campaign=documentation), yang bisa Anda gunakan di mana saja dalam artikel atau halaman blog Anda.
+Untuk menerima donasi (kontribusi) dari pembaca, kami telah mengembangkan komponen React `<TipJar />` yang berfungsi penuh dan terintegrasi dengan [Brevo](https://www.brevo.com/features/email-templates/), yang bisa Anda gunakan di mana saja dalam artikel atau halaman blog Anda.
 
 ```md
 <TipJar />
